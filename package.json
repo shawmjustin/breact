@@ -1,0 +1,25 @@
+{
+  "name": "react-search",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.8.5"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "bootstrap": "^4.0.0-alpha.6",
+    "history": "^4.6.0",
+    "octicons": "^5.0.1",
+    "react": "^15.4.2",
+    "react-addons-create-fragment": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-icons": "^2.2.3",
+    "react-router-dom": "^4.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
