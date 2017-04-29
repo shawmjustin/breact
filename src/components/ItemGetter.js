@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import BeerCard from './BeerCard';
+import React/*, { Component }*/ from "react";
+import BeerShell from './BeerShell';
 import { getCookie } from './components';
 // import DeleteBeer from './DeleteBeer';
 
 
-export default class CardsComponent extends React.Component {
+export default class ItemGetter extends React.Component {
     constructor() {
         super();
         this.state = { items: [] };
@@ -31,24 +31,12 @@ export default class CardsComponent extends React.Component {
     render() {        
         return(
            <div>
-           <div className="row">              		
            { this.state.items.map(item => { 
-             return (
-             <div key={item._id} className="col-sm-6 beer-card">
-             <BeerCard
-             id={item.beer_id}  
-             name={item.name} 
-             brewery={item.brewery} 
-             style={item.style} 
-             ibu={item.ibu} 
-             abv={item.abv} 
-             color={item.color} 
-             details={item.details} />
-             </div>
-             );
-         }) }             
-         </div>             
-         </div>   
+                return (
+                <BeerShell key={item._id} id={item._id} beer_id={item.beer_id} user_id={item.user_id} />
+                );
+            }) }             
+            </div>   
          );
      }
  }

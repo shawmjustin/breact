@@ -7,14 +7,15 @@ import {
 
 import AddBeer from './AddBeer';
 /*import BeerCard from './BeerCard';*/
-import DataGetter from './DataGetter';
+import ItemGetter from './ItemGetter';
 import BeerForm from './BeerForm';
 import Logout from './Logout';
+import Search from './Search/Search';
 
 class RouterExample extends React.Component {
-  constructor(props){
+  /*constructor(props){
     super(props);
-  }
+  }*/
 
   render(){
     return (
@@ -23,13 +24,15 @@ class RouterExample extends React.Component {
           <nav className="navbar navbar-inverse bg-inverse">
             <form className="form-inline">
               {/*<li><Link to="/">Home</Link></li>*/}
-              <Logout />
+              <Logout uid={this.props.uid} />
               <Link to="/AddBeer"><AddBeer /></Link>
+              <Link className="white" to="/search">Search</Link>
             </form>
           </nav>
 
-            <Route exact path="/" component={DataGetter} />
-            <Route path="/AddBeer" component={BeerForm} />
+            <Route exact path="/" component={ItemGetter} />
+            <Route path="/addbeer" component={BeerForm} />
+            <Route path="/search" component={Search} />
           </div>
         </Router>
     );

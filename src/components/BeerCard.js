@@ -1,53 +1,54 @@
-import React, { Component } from "react";
+import React from 'react';
+import Delete from './BeerCard/Delete';
 
-export default class BeerCard extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            deleted: false
-        }
-        this.handleClick = this.handleClick.bind(this);
-    }
+class BeerCard extends React.Component {
+	constructor(props){
+		//list_id, beer_id, name, brewery, color, created, 
+		//details, ibu, abv, style, compressed
+		super(props);
 
-    handleClick = () => {
-        const id = this.props.id;
-        const url = `http://localhost:3002/beers/${id}`;
+		this.handleShowClick = this.handleShowClick.bind(this);
+		this.handleHideClick = this.handleHideClick.bind(this);
+		this.state = {
+			showDetails: false,
+			details: null
+		}
+	}
 
-        console.log(url);
-        
-        fetch(url, {
-          method: 'delete'
-        }).then(response =>
-        response.json().then(json => {
-          this.setState(prevState => ({
-            deleted: !prevState.deleted
-          }));
-        })
-        );
-    }
- 
-    render() {
-        const deleted = this.state.deleted;
-        return (
-            <div>
-              {deleted ? (
-                <p></p>
-              ) : (
-                <div key={this.props.id} className="card card-outline-primary">
-                  <div className="card-block">
-                    <h4 className="card-title">{this.props.name}</h4>
-                    <h6 className="card-subtitle mb-2 text-muted">{this.props.brewery}</h6>
-                    <p className="card-text">{this.props.details}</p>
-                    <h6>Abv: {this.props.abv}  -  IBU: {this.props.ibu}  -  Color: {this.props.color}  -  Style: {this.props.style}</h6>
-                    <a href="#" className="card-link edit">Edit</a>
-                    <a href="#" className="card-link delete" onClick={(x) => this.handleClick(x)}>Delete</a>
-                  </div>
-                </div>
-              )}
-            </div>
-        );
-    }
+	handleShowClick(e){
+		e.preventDefault();
+		this.setState({ showDetails: true, details: this.props.details });
+	}
+
+	handleHideClick(e){
+		e.preventDefault();
+		this.setState({ showDetails: false, details: null });
+	}
+
+	render(){
+		const showDetails = this.state.showDetails;
+		let button = null;
+		
+		if(showDetails){
+			button = <a href="" onClick={this.handleHideClick}>hide</a>;
+		}else{
+			button = <a href="" onClick={this.handleShowClick}>show</a>;
+		}
+
+		return(
+			<div className="card left">
+		    <h3 className="card-header">
+		    <img src="beer.png" className="beer-image" width="42" height="42" />
+		    <span>{this.props.name}</span>
+		    </h3>
+			  <div className="card-block">
+			  	<h6 className="card-subtitle mb-2 text-muted">{this.props.brewery}</h6>
+			    <p className="card-text">{this.state.details} {button}</p>
+			    <a href="#" className="card-link">Edit</a><Delete list_id={this.props.list_id} />
+			  </div>
+			</div>
+		);
+	}
 }
 
-
-
+export default BeerCard;

@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React/*, { Component }*/ from 'react';
 import Login from './Login';
-import SignedIn from './SignedIn';
+// import SignedIn from './SignedIn';
 import RouterExample from './RouterExample';
 
 class Splash extends React.Component {
-	constructor(props){
+	/*constructor(props){
 		super(props);
-	}
+	}*/
 
 	componentDidMount(){
 		console.log(this.props.token)

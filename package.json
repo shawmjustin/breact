@@ -14,7 +14,9 @@
     "react-addons-create-fragment": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-icons": "^2.2.3",
-    "react-router-dom": "^4.0.0"
+    "react-router-dom": "^4.0.0",
+    "validator": "^7.0.0",
+    "valuelink": "^1.4.1-rc01"
   },
   "scripts": {
     "start": "react-scripts start",

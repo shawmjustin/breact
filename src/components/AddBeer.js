@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React/*, { Component }*/ from 'react';
 
 class AddBeer extends React.Component {
-	constructor(props){
+	/*constructor(props){
 		super(props);
-	}
+	}*/
 
 	render(){
 		return(
-			<button type="button" className="btn btn-link right">Add beer</button>
+			<button type="button" className="btn btn-link right white">Add beer</button>
 		);
 	}
 }

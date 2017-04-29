@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Splash from './components/Splash';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import { getCookie } from './components/components';
-import RouterExample from './components/RouterExample';
+// import RouterExample from './components/RouterExample';
 
 
 

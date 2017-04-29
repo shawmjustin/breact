@@ -89,6 +89,7 @@ body {
 
 .left {
   text-align: left;
+  padding: 0;
 }
 
 .right {
@@ -100,8 +101,54 @@ body {
   border-top: 0;
   border-right: 0;
   width: 100%;
+  margin-bottom: 5px;
 }
 
 .beer-form {
   text-align: left;
+}
+
+.beer-image {
+  float: left;
+  margin-right: 15px;
+}
+
+.sign-in {
+  margin: 0;
+  text-align: left;
+}
+
+.error-message {
+  text-align: left;
+}
+
+.white {
+  color: white;
+}
+
+.white:hover {
+  color: white;
+}
+
+.white:clicked {
+  color: white;
+}
+
+.dropdown-li {
+  cursor: pointer;
+  border-top: 0;
+}
+
+.plus {
+  width: 10%;
+  text-align: right;
+}
+
+.list-item {
+  width: 90%;
+  text-align: left;
+}
+
+.search {
+  margin: 0;
 }
